@@ -39,7 +39,7 @@ const DetailSection = () => {
   const handleDetailChange = (index, fieldName, value) => {
     // Validate numeric input for qty and rate
     if (fieldName === "qty" || fieldName === "rate") {
-      const numericValue = ((value === "" ||isNaN(value)) ? "" : parseFloat(value));
+      const numericValue = ((value === "" ||isNaN(value)) ? 0 : parseFloat(value));
       console.log(value , numericValue);
       setLocalDetailData((prevData) =>
         prevData.map((row, i) =>

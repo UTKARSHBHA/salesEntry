@@ -28,22 +28,25 @@ const HeaderSection = () => {
       // Check if the value is not numeric
       if (value === "" || isNaN(value)) {
         // Handle non-numeric input, set an error and return
-        setValidationErrors({
-          ...validationErrors,
-          [fieldName]: "Account Amount must be a number",
-        });
+        // setValidationErrors({
+        //   ...validationErrors,
+        //   [fieldName]: "Account Amount must be a number",
+        // });
 
         setLocalValues((prevValues) => ({
           ...prevValues,
-          [fieldName]: "",
+          [fieldName]: 0,
         }));
 
-        return;
+        // return;
       }
-      setLocalValues((prevValues) => ({
-        ...prevValues,
-        [fieldName]: parseFloat(value),
-      }));
+      else{
+
+        setLocalValues((prevValues) => ({
+          ...prevValues,
+          [fieldName]: parseFloat(value),
+        }));
+      }
 
     }
 
